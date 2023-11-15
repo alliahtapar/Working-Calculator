@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    <body>
+        <div class="calcu">
+        <td colspan="3">
+            <input type="text" id="result" disabled>
+        </td>
+        
+    
+        <div class="buttons">
+
+            <input type="button" onclick="append(7)" value="7">
+            <input type="button" onclick="append(8)" value="8">
+            <input type="button" onclick="append(9)" value="9">
+            <input type="button" onclick="divide()" value="/">
+            <input type="button" onclick="multiply()" value="*">
+            <input type="button" onclick="clearInput()" value="C">
+            <input type="button" onclick="append(4)" value="4">
+            <input type="button" onclick="append(5)" value="5">
+            <input type="button" onclick="append(6)" value="6">
+            <input type="button" onclick="add()" value="+">
+            <input type="button" onclick="subtract()" value="-">
+            <input type="button" onclick="append('00')" value="00">
+            <input type="button" onclick="append(1)" value="1">
+            <input type="button" onclick="append(2)" value="2">
+            <input type="button" onclick="append(3)" value="3">
+            <input type="button" onclick="append(0)" value="0">
+            <input type="button" onclick="append('.')" value=".">
+            <input type="button" onclick="calculate()" value="=">
+            
+        </div>
+
+        </div>
+    
+        <script>
+            let currentInput = '';
+            let currentOperator = '';
+    
+            function append(numbers) {
+                currentInput += numbers;
+                document.getElementById('result').value = currentInput;
+            }
+
+            function clearInput() {
+                currentInput = '';
+                currentOperator = '';
+                document.getElementById('result').value = '';
+            }
+
+    
+            function add() {
+                currentOperator = '+';
+                currentInput += currentOperator;
+                document.getElementById('result').value = currentInput;
+            }
+
+            function subtract() {
+                currentOperator = '-';
+                currentInput += currentOperator;
+                document.getElementById('result').value = currentInput;
+            }
+            
+            function multiply() {
+                currentOperator = '*';
+                currentInput += currentOperator;
+                document.getElementById('result').value = currentInput;
+            }
+    
+            function divide() {
+                currentOperator = '/';
+                currentInput += currentOperator;
+                document.getElementById('result').value = currentInput;
+            }
+    
+            function clearInput() {
+                currentInput = '';
+                currentOperator = '';
+                document.getElementById('result').value = '';
+            }
+    
+            function calculate() {
+               const result = eval(currentInput);
+               document.getElementById('result').value = result;
+               currentInput = result.toString();
+               currentOperator = '';
+            
+            }
+    
+        </script>
+        </div>
+</body>
+</html>
